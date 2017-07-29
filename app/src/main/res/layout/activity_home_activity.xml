@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context="com.project.hellonepal.HomeActivity">
+
+
+    <Button
+        android:id="@+id/findAround"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:padding="4dp"
+        android:text="Find Around Me"
+        android:textColor="#F3E5F5"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/diary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:padding="4dp"
+        android:text="Travel Diary"
+        android:textColor="#F3E5F5"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/routeTracker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:padding="4dp"
+        android:text="Track My Route"
+        android:textColor="#F3E5F5"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/shareRoute"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:padding="4dp"
+        android:text="Share My Route"
+        android:textColor="#F3E5F5"
+        android:textSize="20sp" />
+
+</LinearLayout>
