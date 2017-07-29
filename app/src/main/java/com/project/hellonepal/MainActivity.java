@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
-    // The ImageView of the coffeeLogos
+    // The ImageView of the Logos
     private ImageView coffeeLogo;
     private ImageView travelLogo;
     private ImageView foodLogo;
