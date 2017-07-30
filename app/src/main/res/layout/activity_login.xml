@@ -8,6 +8,12 @@
     android:padding="10dp"
     tools:context="com.project.hellonepal.LoginActivity">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:src="@drawable/logo2" />
+
     <EditText
         android:id="@+id/username"
         android:layout_width="match_parent"
