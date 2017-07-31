@@ -9,6 +9,16 @@
     tools:context="com.project.hellonepal.HomeActivity">
 
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif-medium"
+        android:padding="4dp"
+        android:text="Choose From Menu:"
+        android:textColor="#000000"
+        android:textSize="30sp" />
+
     <Button
         android:id="@+id/findAround"
         android:layout_width="match_parent"
