@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark">
+
+    <!--<ScrollView-->
+    <!--android:id="@+id/ScrollView01"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="150dip">-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"/>-->
+
+    <!--</ScrollView>-->
+
+    <EditText
+        android:id="@+id/diaryTitleText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@+id/currentDate"
+        android:background="#00000000"
+        android:ems="12"
+        android:gravity="start|top"
+        android:hint="@string/title"
+        android:inputType="text"
+        android:padding="12dp"
+        android:textColor="#FFFFFF"
+
+        android:textColorHint="@color/textColor"
+        android:textCursorDrawable="@null" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/currentDate"
+        android:layout_toStartOf="@+id/currentDate"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <EditText
+            android:id="@+id/diaryContentText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/currentDate"
+            android:layout_alignTop="@+id/currentDate"
+            android:background="#00000000"
+            android:ems="12"
+            android:gravity="start|top"
+            android:hint="@string/yo_what_up"
+            android:inputType="textMultiLine"
+            android:padding="12dp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="@color/textColor"
+            android:textCursorDrawable="@null" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/saveDiary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/currentDate"
+        android:layout_toEndOf="@+id/diaryTitleText"
+        android:background="#00000000"
+        android:text="@string/save"
+        android:textColor="@color/textColor" />
+
+    <TextView
+        android:id="@+id/currentDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/saveDiary"
+        android:layout_marginTop="13dp"
+        android:padding="12dp"
+        android:text="Current Date"
+        android:textColor="@color/textColor" />
+
+    <com.nightonke.boommenu.BoomMenuButton
+        android:id="@+id/bmb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        app:bmb_buttonEnum="simpleCircle"
+        app:bmb_buttonPlaceEnum="buttonPlace_sc_1"
+        app:bmb_normalColor="@color/colorPrimary"
+        app:bmb_piecePlaceEnum="piecePlace_dot_1" />
+
+</RelativeLayout>
