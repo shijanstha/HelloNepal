@@ -6,6 +6,13 @@
     android:orientation="vertical"
     android:padding="10dp"
     tools:context="com.project.hellonepal.RegisterActivity">
+    <TextView android:text="Register User"
+        android:padding="10dp"
+        android:textSize="22sp"
+        android:gravity="center"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 
     <EditText

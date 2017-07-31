@@ -14,24 +14,26 @@ public class HomeActivity extends AppCompatActivity {
         findViewById(R.id.findAround).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this,MainActivity.class));
+                startActivity(new Intent(HomeActivity.this, MainActivity.class));
             }
         });
         findViewById(R.id.diary).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this,MainActivity.class));
+                startActivity(new Intent(HomeActivity.this, com.project.hellonepal.diary.MainActivity
+                        .class));
             }
         });
         findViewById(R.id.routeTracker).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this,MainActivity.class));
+                startActivity(new Intent(HomeActivity.this, MainActivity.class));
             }
-        }); findViewById(R.id.shareRoute).setOnClickListener(new View.OnClickListener() {
+        });
+        findViewById(R.id.shareRoute).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this,MainActivity.class));
+                startActivity(new Intent(HomeActivity.this, MainActivity.class));
             }
         });
 

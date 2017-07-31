@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">HelloNepal</string>
     <string name="title_activity_maps">Map</string>
+    <string name="action_settings">Settings</string>
+
+
+    <string name="showDiary">View Diary</string>
+    <string name="title">Title</string>
+    <string name="content">content</string>
+    <string name="yo_what_up">Yo! What up?</string>
+    <string name="save">Save</string>
 </resources>

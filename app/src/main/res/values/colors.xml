@@ -14,4 +14,5 @@
     <color name="FSQLime">#C5DE35</color>
     <color name="FSQGuacamole">#73CF42</color>
     <color name="FSQKale">#00B551</color>
+    <color name="textColor">#FFFF</color>
 </resources>
