@@ -50,5 +50,13 @@
             android:fontFamily="sans-serif-medium"
             android:text="Register"
             android:textColor="#F3E5F5" />
+
+        <Button
+            android:id="@+id/explore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="explore"
+            android:textColor="#F3E5F5" />
     </LinearLayout>
 </LinearLayout>
