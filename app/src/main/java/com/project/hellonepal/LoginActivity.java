@@ -21,7 +21,7 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText username, password;
 
-    String url = "http://172.16.16.245:88/ourservice/service.php?task=login";
+    String url = "http://192.168.100.15:88/ourservice/service.php?task=login";
 
     AQuery aQuery;
 
