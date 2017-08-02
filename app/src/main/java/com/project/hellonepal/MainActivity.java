@@ -35,7 +35,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         // Attaches a listener for animation/transition to the logos
 
         travelLogo = (ImageView) findViewById(R.id.travel);
-        travelLogo.setOnClickListener(MainActivity.this);
+        travelLogo.setOnClickListener(this);
 
         coffeeLogo = (ImageView) findViewById(R.id.coffee);
         coffeeLogo.setOnClickListener(this);
@@ -110,6 +110,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 // Attaches the alpha/scale animation to the view
                 view.startAnimation(click);
                 break;
+
             case R.id.coffee:
                 Animation click2 = AnimationUtils.loadAnimation(this, R.anim.click);
 
@@ -137,15 +138,47 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         }
                     }
                 });
-
                 // Attaches the alpha/scale animation to the view
                 view.startAnimation(click2);
                 break;
+
             case R.id.travel:
                 Animation click3 = AnimationUtils.loadAnimation(this, R.anim.click);
 
                 // Defines a listener to transition to the PlacePickerActivity after the animation completes
                 click3.setAnimationListener(new Animation.AnimationListener() {
+
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                            selector = 4;
+                            Intent i = new Intent(getApplicationContext(), PlacePickerActivity.class);
+                            startActivity(i);
+
+                        } else {
+                            // Notifies the user if there are insufficient location permissions
+                            Toast.makeText(getApplicationContext(), "App is missing permissions to access your location!", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
+
+                // Attaches the alpha/scale animation to the view
+                view.startAnimation(click3);
+                break;
+
+            case R.id.drink:
+                Animation click4 = AnimationUtils.loadAnimation(this, R.anim.click);
+
+                // Defines a listener to transition to the PlacePickerActivity after the animation completes
+                click4.setAnimationListener(new Animation.AnimationListener() {
 
                     @Override
                     public void onAnimationStart(Animation animation) {
@@ -170,39 +203,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 });
 
                 // Attaches the alpha/scale animation to the view
-                view.startAnimation(click3);
-                break;
-            case R.id.drink:
-                Animation click4 = AnimationUtils.loadAnimation(this, R.anim.click);
-
-                // Defines a listener to transition to the PlacePickerActivity after the animation completes
-                click4.setAnimationListener(new Animation.AnimationListener() {
-
-                    @Override
-                    public void onAnimationStart(Animation animation) {
-                    }
-
-                    @Override
-                    public void onAnimationRepeat(Animation animation) {
-                    }
-
-                    @Override
-                    public void onAnimationEnd(Animation animation) {
-                        if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-                            selector = 4;
-                            Intent i = new Intent(getApplicationContext(), PlacePickerActivity.class);
-                            startActivity(i);
-
-                        } else {
-                            // Notifies the user if there are insufficient location permissions
-                            Toast.makeText(getApplicationContext(), "App is missing permissions to access your location!", Toast.LENGTH_LONG).show();
-                        }
-                    }
-                });
-
-                // Attaches the alpha/scale animation to the view
                 view.startAnimation(click4);
                 break;
+
             case R.id.art:
                 Animation click5 = AnimationUtils.loadAnimation(this, R.anim.click);
 
@@ -220,7 +223,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                     @Override
                     public void onAnimationEnd(Animation animation) {
                         if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-                            selector = 4;
+                            selector = 5;
                             Intent i = new Intent(getApplicationContext(), PlacePickerActivity.class);
                             startActivity(i);
 
@@ -233,6 +236,37 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
                 // Attaches the alpha/scale animation to the view
                 view.startAnimation(click5);
+                break;
+            case R.id.shop:
+                Animation click6 = AnimationUtils.loadAnimation(this, R.anim.click);
+
+                // Defines a listener to transition to the PlacePickerActivity after the animation completes
+                click6.setAnimationListener(new Animation.AnimationListener() {
+
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                            selector = 6;
+                            Intent i = new Intent(getApplicationContext(), PlacePickerActivity.class);
+                            startActivity(i);
+
+                        } else {
+                            // Notifies the user if there are insufficient location permissions
+                            Toast.makeText(getApplicationContext(), "App is missing permissions to access your location!", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
+
+                // Attaches the alpha/scale animation to the view
+                view.startAnimation(click6);
                 break;
         }
 

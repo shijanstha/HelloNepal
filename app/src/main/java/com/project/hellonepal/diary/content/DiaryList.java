@@ -18,10 +18,6 @@ import io.realm.RealmResults;
 import io.realm.Sort;
 
 
-/**
- * Created by rojo on 2/24/17.
- */
-
 public class DiaryList extends Activity {
 
 
@@ -46,7 +42,7 @@ public class DiaryList extends Activity {
     }
 
     private void addItemsTo(List<Diary> diaryItems) {
-
+        Realm.init(this);
         Realm realm = Realm.getDefaultInstance();
 //        realm.beginTransaction();
 //

@@ -16,10 +16,6 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 
 
-/**
- * Created by rojo on 2/25/17.
- */
-
 public class DiaryAdapter extends RecyclerView.Adapter<DiaryAdapter.ViewHolder> {
 
     final SimpleDateFormat format = new SimpleDateFormat("MMM d, yyyy h:mm a");

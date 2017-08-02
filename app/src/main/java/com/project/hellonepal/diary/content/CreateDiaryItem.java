@@ -27,10 +27,6 @@ import java.util.Date;
 import io.realm.Realm;
 
 
-/**
- * Created by rojo on 2/26/17.
- */
-
 public class CreateDiaryItem extends Activity implements View.OnClickListener, OnBMClickListener {
 
 

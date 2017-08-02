@@ -27,9 +27,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class
-PlacePickerActivity extends Activity
-
+public class PlacePickerActivity extends Activity
         implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
     // The client object for connecting to the Google API
@@ -129,20 +127,23 @@ PlacePickerActivity extends Activity
                         FoursquareVenue fv = frs.get(0);
 
                         // Notifies the user of their current location
-                        if(MainActivity.selector==1) {
-                            snapToPlace.setText("You're at " + fv.name + ". Here's some resturants nearby.");
+                        if (MainActivity.selector == 1) {
+                            snapToPlace.setText("You're at " + fv.name + ". Here's some restaurants nearby.");
                         }
-                        if(MainActivity.selector==2) {
+                        if (MainActivity.selector == 2) {
                             snapToPlace.setText("You're at " + fv.name + ". Here's some cafe nearby.");
                         }
-                        if(MainActivity.selector==3) {
-                            snapToPlace.setText("You're at " + fv.name + ". Here's some places to see nearby.");
-                        }
-                        if(MainActivity.selector==4) {
+                        if (MainActivity.selector == 3) {
                             snapToPlace.setText("You're at " + fv.name + ". Here's some place to have a drink nearby.");
                         }
-                        if(MainActivity.selector==5) {
-                            snapToPlace.setText("You're at " + fv.name + ". Here's some cafe nearby.");
+                        if (MainActivity.selector == 4) {
+                            snapToPlace.setText("You're at " + fv.name + ". Here's some popular places to see nearby.");
+                        }
+                        if (MainActivity.selector == 5) {
+                            snapToPlace.setText("You're at " + fv.name + ". Here's some arts nearby.");
+                        }
+                        if (MainActivity.selector == 6) {
+                            snapToPlace.setText("You're at " + fv.name + ". Here's some shops nearby.");
                         }
                     }
 
@@ -167,7 +168,7 @@ PlacePickerActivity extends Activity
 //                        userLL,
 //                        userLLAcc);
 //                foodCall.enqueue(new Callback<FoursquareJSON>() {
-                if(MainActivity.selector==1) {
+                if (MainActivity.selector == 1) {
                     Call<FoursquareJSON> placesCall = foursquare.searchFood(
                             foursquareClientID,
                             foursquareClientSecret,
@@ -197,7 +198,7 @@ PlacePickerActivity extends Activity
                         }
                     });
                 }
-                if(MainActivity.selector==2) {
+                if (MainActivity.selector == 2) {
                     Call<FoursquareJSON> placesCall = foursquare.searchCoffee(
                             foursquareClientID,
                             foursquareClientSecret,
@@ -227,37 +228,7 @@ PlacePickerActivity extends Activity
                         }
                     });
                 }
-                if(MainActivity.selector==3) {
-                    Call<FoursquareJSON> placesCall = foursquare.sights(
-                            foursquareClientID,
-                            foursquareClientSecret,
-                            userLL,
-                            userLLAcc);
-
-                    placesCall.enqueue(new Callback<FoursquareJSON>() {
-
-                        @Override
-                        public void onResponse(Call<FoursquareJSON> call, Response<FoursquareJSON> response) {
-
-                            // Gets the venue object from the JSON response
-                            FoursquareJSON fJson = response.body();
-                            FoursquareResponse fr = fJson.response;
-                            FoursquareGroup fg = fr.group;
-                            List<FoursquareResults> frs = fg.results;
-
-                            // Displays the results in the RecyclerView
-                            placePickerAdapter = new PlacePickerAdapter(getApplicationContext(), frs);
-                            placePicker.setAdapter(placePickerAdapter);
-                        }
-
-                        @Override
-                        public void onFailure(Call<FoursquareJSON> call, Throwable t) {
-                            Toast.makeText(getApplicationContext(), "App can't connect to Foursquare's servers!", Toast.LENGTH_LONG).show();
-                            finish();
-                        }
-                    });
-                }
-                if(MainActivity.selector==4) {
+                if (MainActivity.selector == 3) {
                     Call<FoursquareJSON> placesCall = foursquare.drinks(
                             foursquareClientID,
                             foursquareClientSecret,
@@ -287,7 +258,37 @@ PlacePickerActivity extends Activity
                         }
                     });
                 }
-                if(MainActivity.selector==5) {
+                if (MainActivity.selector == 4) {
+                    Call<FoursquareJSON> placesCall = foursquare.sights(
+                            foursquareClientID,
+                            foursquareClientSecret,
+                            userLL,
+                            userLLAcc);
+
+                    placesCall.enqueue(new Callback<FoursquareJSON>() {
+
+                        @Override
+                        public void onResponse(Call<FoursquareJSON> call, Response<FoursquareJSON> response) {
+
+                            // Gets the venue object from the JSON response
+                            FoursquareJSON fJson = response.body();
+                            FoursquareResponse fr = fJson.response;
+                            FoursquareGroup fg = fr.group;
+                            List<FoursquareResults> frs = fg.results;
+
+                            // Displays the results in the RecyclerView
+                            placePickerAdapter = new PlacePickerAdapter(getApplicationContext(), frs);
+                            placePicker.setAdapter(placePickerAdapter);
+                        }
+
+                        @Override
+                        public void onFailure(Call<FoursquareJSON> call, Throwable t) {
+                            Toast.makeText(getApplicationContext(), "App can't connect to Foursquare's servers!", Toast.LENGTH_LONG).show();
+                            finish();
+                        }
+                    });
+                }
+                if (MainActivity.selector == 5) {
                     Call<FoursquareJSON> placesCall = foursquare.arts(
                             foursquareClientID,
                             foursquareClientSecret,
@@ -317,13 +318,44 @@ PlacePickerActivity extends Activity
                         }
                     });
                 }
-                }
 
-            } else {
-                Toast.makeText(getApplicationContext(), "App can't determine your current location!", Toast.LENGTH_LONG).show();
-                finish();
+                if (MainActivity.selector == 6) {
+                    Call<FoursquareJSON> placesCall = foursquare.shops(
+                            foursquareClientID,
+                            foursquareClientSecret,
+                            userLL,
+                            userLLAcc);
+
+                    placesCall.enqueue(new Callback<FoursquareJSON>() {
+
+                        @Override
+                        public void onResponse(Call<FoursquareJSON> call, Response<FoursquareJSON> response) {
+
+                            // Gets the venue object from the JSON response
+                            FoursquareJSON fJson = response.body();
+                            FoursquareResponse fr = fJson.response;
+                            FoursquareGroup fg = fr.group;
+                            List<FoursquareResults> frs = fg.results;
+
+                            // Displays the results in the RecyclerView
+                            placePickerAdapter = new PlacePickerAdapter(getApplicationContext(), frs);
+                            placePicker.setAdapter(placePickerAdapter);
+                        }
+
+                        @Override
+                        public void onFailure(Call<FoursquareJSON> call, Throwable t) {
+                            Toast.makeText(getApplicationContext(), "App can't connect to Foursquare's servers!", Toast.LENGTH_LONG).show();
+                            finish();
+                        }
+                    });
+                }
             }
+
+        } else {
+            Toast.makeText(getApplicationContext(), "App can't determine your current location!", Toast.LENGTH_LONG).show();
+            finish();
         }
+    }
 
     @Override
     protected void onResume() {
@@ -347,7 +379,7 @@ PlacePickerActivity extends Activity
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-        Toast.makeText(getApplicationContext(), "App can't connect to Google's servers!", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "App can't connect to Foursquare's servers!", Toast.LENGTH_LONG).show();
         finish();
     }
 }

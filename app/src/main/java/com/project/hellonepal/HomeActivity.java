@@ -27,13 +27,13 @@ public class HomeActivity extends AppCompatActivity {
         findViewById(R.id.routeTracker).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this, MainActivity.class));
+                startActivity(new Intent(HomeActivity.this, TrackMyRouteActivity.class));
             }
         });
         findViewById(R.id.shareRoute).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this, MainActivity.class));
+                startActivity(new Intent(HomeActivity.this, ShareMyRouteActivity.class));
             }
         });
 

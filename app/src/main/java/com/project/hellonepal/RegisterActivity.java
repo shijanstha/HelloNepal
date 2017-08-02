@@ -1,5 +1,6 @@
 package com.project.hellonepal;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -43,6 +44,13 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.cancel).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+            }
+        });
+
     }
 
     public void processRegister(){
@@ -68,6 +76,7 @@ public class RegisterActivity extends AppCompatActivity {
                 try {
                     if (object.getString("message").contains("User Inserted"))
                         Toast.makeText(RegisterActivity.this, "User Registered", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
 
 
                 } catch (JSONException e) {

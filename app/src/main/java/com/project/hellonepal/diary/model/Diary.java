@@ -4,10 +4,6 @@ import java.util.Date;
 
 import io.realm.RealmObject;
 
-/**
- * Created by rojo on 2/26/17.
- */
-
 public class Diary extends RealmObject {
 
 

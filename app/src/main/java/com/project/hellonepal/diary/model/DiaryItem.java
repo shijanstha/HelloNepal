@@ -1,8 +1,5 @@
 package com.project.hellonepal.diary.model;
 
-/**
- * Created by rojo on 2/25/17.
- */
 
 public class DiaryItem {
     private String title;

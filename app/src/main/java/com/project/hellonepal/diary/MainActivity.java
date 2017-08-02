@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "Add/Redirect to today's diary",
+                Toast.makeText(MainActivity.this, "Add to today's diary",
                         Toast.LENGTH_SHORT).show();
 
                 Intent createDiary = new Intent(MainActivity.this, CreateDiaryItem.class);

@@ -5,10 +5,6 @@ import android.app.Application;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 
-/**
- * Created by rojo on 2/26/17.
- */
-
 public class DiaryApplication extends Application {
 
     @Override
