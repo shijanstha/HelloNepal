@@ -19,7 +19,7 @@ import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    EditText username,password, email,address,phone;
+    EditText username, password, email, address, phone;
 
     AQuery aQuery;
 
@@ -53,7 +53,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-    public void processRegister(){
+    public void processRegister() {
         String usernameValue = username.getText().toString();
         String passwordValue = password.getText().toString();
         String emailValue = email.getText().toString();
@@ -61,18 +61,18 @@ public class RegisterActivity extends AppCompatActivity {
         String phoneValue = phone.getText().toString();
 
 
-        Map<String, Object>params = new HashMap<String, Object>();
-        params.put("username",usernameValue);
-        params.put("password",passwordValue);
-        params.put("email",emailValue);
-        params.put("address",addressValue);
-        params.put("phone",phoneValue);
+        Map<String, Object> params = new HashMap<String, Object>();
+        params.put("username", usernameValue);
+        params.put("password", passwordValue);
+        params.put("email", emailValue);
+        params.put("address", addressValue);
+        params.put("phone", phoneValue);
 
-        aQuery.ajax(url,params, org.json.JSONObject.class,new AjaxCallback<org.json.JSONObject>(){
+        aQuery.ajax(url, params, org.json.JSONObject.class, new AjaxCallback<org.json.JSONObject>() {
             @Override
             public void callback(String url, org.json.JSONObject object, AjaxStatus status) {
                 super.callback(url, object, status);
-                Log.i("response", url+" response"+object);
+                Log.i("response", url + " response" + object);
                 try {
                     if (object.getString("message").contains("User Inserted"))
                         Toast.makeText(RegisterActivity.this, "User Registered", Toast.LENGTH_SHORT).show();
