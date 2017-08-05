@@ -34,7 +34,7 @@ public class ViewMyRouteActivity extends AppCompatActivity {
     AQuery aQuery;
 
 
-    String url = "http://192.168.0.104:88/ourservice/service.php?task=listRoute&to=";
+    String url = "http://192.168.100.8:88/ourservice/service.php?task=listRoute&to=";
 
     ArrayList<ViewRouteInfo> routeList;
     SharedPreferences preferences;

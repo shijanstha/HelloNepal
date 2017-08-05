@@ -22,7 +22,7 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText username, password;
 
-    String url = "http://192.168.0.104:88/ourservice/service.php?task=login";
+    String url = "http://192.168.100.8:88/ourservice/service.php?task=login";
     SharedPreferences preferences;
 
     AQuery aQuery;

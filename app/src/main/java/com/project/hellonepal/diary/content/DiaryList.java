@@ -39,6 +39,7 @@ public class DiaryList extends Activity {
         recyclerView.setAdapter(diaryAdapter);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
+
     }
 
     private void addItemsTo(List<Diary> diaryItems) {
@@ -86,4 +87,5 @@ public class DiaryList extends Activity {
     protected void onDestroy() {
         super.onDestroy();
     }
+
 }

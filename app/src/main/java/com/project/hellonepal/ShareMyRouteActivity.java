@@ -38,8 +38,8 @@ public class ShareMyRouteActivity extends AppCompatActivity {
     DatabaseHelper databaseHelper;
     AQuery aQuery;
 
-    String url = "http://192.168.0.104:88/ourservice/service.php?task=listUser";
-    String insertRouteUrl = "http://192.168.0.104:88/ourservice/service.php?task=insertRoute";
+    String url = "http://192.168.100.8:88/ourservice/service.php?task=listUser";
+    String insertRouteUrl = "http://192.168.100.8:88/ourservice/service.php?task=insertRoute";
 
 
     ArrayList<UserInfo> userList;
