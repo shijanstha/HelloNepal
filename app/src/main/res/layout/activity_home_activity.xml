@@ -58,5 +58,14 @@
         android:text="Share My Route"
         android:textColor="#F3E5F5"
         android:textSize="20sp" />
+    <Button
+        android:id="@+id/viewSharedRoute"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:padding="4dp"
+        android:text="View Shared Route"
+        android:textColor="#F3E5F5"
+        android:textSize="20sp" />
 
 </LinearLayout>

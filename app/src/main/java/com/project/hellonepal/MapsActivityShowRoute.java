@@ -75,11 +75,12 @@ public class MapsActivityShowRoute extends FragmentActivity
                         .title("Start")
 //                .snippet("View on Foursquare")
         );
-//        mMap.addMarker(new MarkerOptions()
-//                        .position(polylineOptions.getPoints().get(polylineOptions.getPoints().size()))
-//                        .title("End")
-////                .snippet("View on Foursquare")
-//        );
+        if (polylineOptions.getPoints().size() > 1)
+            mMap.addMarker(new MarkerOptions()
+                            .position(polylineOptions.getPoints().get(polylineOptions.getPoints().size() - 1))
+                            .title("End")
+//                .snippet("View on Foursquare")
+            );
         marker.showInfoWindow();
 //        mMap.setOnInfoWindowClickListener(this);
 

@@ -50,12 +50,15 @@
         <activity android:name=".HomeActivity" />
         <activity android:name=".diary.MainActivity" />
         <activity android:name=".diary.content.DiaryList" />
-        <activity android:name=".MapsActivityShowRoute"  android:theme="@style/AppTheme1"/>
+        <activity
+            android:name=".MapsActivityShowRoute"
+            android:theme="@style/AppTheme1" />
         <activity
             android:name=".diary.content.CreateDiaryItem"
             android:windowSoftInputMode="adjustPan" />
         <activity android:name=".TrackMyRouteActivity" />
-        <activity android:name=".ShareMyRouteActivity"></activity>
+        <activity android:name=".ShareMyRouteActivity" />
+        <activity android:name=".ViewMyRouteActivity"></activity>
     </application>
 
 </manifest>

@@ -11,24 +11,22 @@
         android:padding="10dp"
         android:text="tewaefasdf"
         android:textSize="18sp" />
+    <TextView android:id="@+id/fromUser"
+        android:padding="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView android:id="@+id/phone" android:text="asdfasdf"
+        android:layout_width="wrap_content"
+        android:padding="10dp"
+        android:layout_height="wrap_content" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
 
-        <Button
-            android:id="@+id/share"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:focusable="false"
-            android:text="Share" />
-        <Button
-            android:id="@+id/delete"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:focusable="false"
-            android:text="Delete" />
+
         <Button
             android:id="@+id/view"
             android:layout_width="wrap_content"

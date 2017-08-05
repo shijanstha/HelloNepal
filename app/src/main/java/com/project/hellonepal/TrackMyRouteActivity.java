@@ -143,7 +143,7 @@ public class TrackMyRouteActivity extends AppCompatActivity implements LocationL
     @Override
     public void onLocationChanged(Location location) {
         Toast.makeText(this, "lat:" + location.getLatitude() + " long:" + location.getLongitude(), Toast.LENGTH_SHORT).show();
-        if (distance_in_meter(currentLat, currentLong, location.getLatitude(), location.getLongitude()) > 100) {
+        if (distance_in_meter(currentLat, currentLong, location.getLatitude(), location.getLongitude()) > 10) {
             currentLat = location.getLatitude();
             currentLong = location.getLongitude();
             pointList.add(new LatLng(location.getLatitude(), location.getLongitude()));
@@ -197,9 +197,9 @@ public class TrackMyRouteActivity extends AppCompatActivity implements LocationL
 
 
     public void getRouteInfo(String routename) {
+        array = new JSONArray();
         for (int i = 0; i < pointList.size(); i++) {
             LatLng latLng = pointList.get(i);
-            array = new JSONArray();
             try {
                 JSONObject object = new JSONObject();
                 object.put("latitude", latLng.latitude);

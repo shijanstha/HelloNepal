@@ -1,6 +1,7 @@
 package com.project.hellonepal;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -21,7 +22,8 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText username, password;
 
-    String url = "http://192.168.100.15:88/ourservice/service.php?task=login";
+    String url = "http://192.168.0.104:88/ourservice/service.php?task=login";
+    SharedPreferences preferences;
 
     AQuery aQuery;
 
@@ -30,6 +32,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         aQuery = new AQuery(this);
+        preferences = getSharedPreferences("userinfo",0);
 
         username = (EditText) findViewById(R.id.username);
         password = (EditText) findViewById(R.id.password);
@@ -77,10 +80,12 @@ public class LoginActivity extends AppCompatActivity {
                 Log.i("response", url + " response" + object);
 
                 try {
-                    if (object.getString("message").contains("Login successful"))
+                    if (object.getString("message").contains("Login successful")) {
                         startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                        preferences.edit().putString("userId",object.getJSONObject("result").getString("id")).apply();
+                    }
                     else
-                    Toast.makeText(LoginActivity.this, "Invalid Username or Password", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Invalid Username or Password", Toast.LENGTH_SHORT).show();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

@@ -29,6 +29,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         getWritableDatabase().insert("route", "", contentValues);
     }
 
+    public void deleteRoute(String id){
+        getWritableDatabase().delete("route","id="+id,null);
+    }
+
     public ArrayList<RouteInfo> getRoutes() {
         ArrayList<RouteInfo> list = new ArrayList<RouteInfo>();
 
