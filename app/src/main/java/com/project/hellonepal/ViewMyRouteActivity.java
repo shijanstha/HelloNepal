@@ -33,8 +33,7 @@ public class ViewMyRouteActivity extends AppCompatActivity {
     DatabaseHelper databaseHelper;
     AQuery aQuery;
 
-
-    String url = "http://192.168.100.8:88/ourservice/service.php?task=listRoute&to=";
+    String url ="https://subhamdhakal23.000webhostapp.com/service.php?task=listRoute&to=";
 
     ArrayList<ViewRouteInfo> routeList;
     SharedPreferences preferences;
@@ -58,7 +57,6 @@ public class ViewMyRouteActivity extends AppCompatActivity {
                 super.callback(url, object, status);
                 Log.i("response", url + " response" + object);
 
-
                 routeList = new ArrayList<ViewRouteInfo>();
                 try {
                     JSONArray array = object.getJSONArray("result");
@@ -78,8 +76,6 @@ public class ViewMyRouteActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 listView.setAdapter(new RouteListAdapter(ViewMyRouteActivity.this, 0, routeList));
-
-
             }
         });
     }
@@ -112,7 +108,6 @@ public class ViewMyRouteActivity extends AppCompatActivity {
                     intent.putExtra("name", info.name);
                     intent.putExtra("points", info.points);
                     startActivity(intent);
-
                 }
             });
             return view;

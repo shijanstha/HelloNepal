@@ -65,6 +65,7 @@ public class TrackMyRouteActivity extends AppCompatActivity implements LocationL
                 showRouteInputDialog();
             }
         });
+
         getLocation();
     }
 
@@ -77,7 +78,7 @@ public class TrackMyRouteActivity extends AppCompatActivity implements LocationL
             isNetworkEnabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
 
             if (!isGPSEnabled && !isNetworkEnabled) {
-                Toast.makeText(getApplicationContext(), "Either Network or GPS is not available in your Mob ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Either Network or GPS is not available in your device.", Toast.LENGTH_LONG).show();
                 // no network provider is enabled
             } else {
                 this.canGetLocation = true;
@@ -149,8 +150,6 @@ public class TrackMyRouteActivity extends AppCompatActivity implements LocationL
             pointList.add(new LatLng(location.getLatitude(), location.getLongitude()));
 
         }
-
-
     }
 
     @Override
@@ -218,7 +217,6 @@ public class TrackMyRouteActivity extends AppCompatActivity implements LocationL
         Toast.makeText(this, "Route Inserted", Toast.LENGTH_SHORT).show();
 
     }
-
 
     private static double distance_in_meter(final double lat1, final double lon1, final double lat2, final double lon2) {
         double R = 6371000f; // Radius of the earth in m

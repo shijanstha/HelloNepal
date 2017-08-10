@@ -14,8 +14,8 @@ import com.daimajia.slider.library.Tricks.ViewPagerEx;
 import java.util.HashMap;
 
 public class HomeActivity extends AppCompatActivity implements BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener {
-    private SliderLayout mDemoSlider;
 
+    private SliderLayout mDemoSlider;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,10 +24,11 @@ public class HomeActivity extends AppCompatActivity implements BaseSliderView.On
         mDemoSlider = (SliderLayout) findViewById(R.id.slider);
 
         HashMap<String, Integer> file_maps = new HashMap<String, Integer>();
-        file_maps.put("art", R.drawable.art1);
+        file_maps.put("HelloNepal", R.mipmap.logo);
         file_maps.put("drink", R.drawable.drink);
         file_maps.put("coffee", R.drawable.coffee);
         file_maps.put("food", R.drawable.food);
+        file_maps.put("HelloNepal Team", R.drawable.hnteam);
 
         for (String name : file_maps.keySet()) {
             TextSliderView textSliderView = new TextSliderView(this);
@@ -40,16 +41,16 @@ public class HomeActivity extends AppCompatActivity implements BaseSliderView.On
 
             //add your extra information
             textSliderView.bundle(new Bundle());
-            textSliderView.getBundle()
-                    .putString("extra", name);
+            textSliderView.getBundle().putString("extra", name);
 
             mDemoSlider.addSlider(textSliderView);
         }
-        mDemoSlider.setPresetTransformer(SliderLayout.Transformer.Accordion);
+        mDemoSlider.setPresetTransformer(SliderLayout.Transformer.RotateDown);
         mDemoSlider.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
         mDemoSlider.setCustomAnimation(new DescriptionAnimation());
         mDemoSlider.setDuration(2000);
         mDemoSlider.addOnPageChangeListener(this);
+
         findViewById(R.id.findAround).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

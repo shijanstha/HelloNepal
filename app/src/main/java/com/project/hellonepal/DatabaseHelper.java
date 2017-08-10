@@ -24,9 +24,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         super(context, name, null, version);
 
     }
-
+//ro
     public void insertRoute(ContentValues contentValues) {
-        getWritableDatabase().insert("route", "", contentValues);
+        getWritableDatabase().insert("ro" +
+                "ute", "", contentValues);
     }
 
     public void deleteRoute(String id){
@@ -62,7 +63,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             info.id = c.getString(c.getColumnIndex("id"));
             info.name = c.getString(c.getColumnIndex("name"));
             info.points = c.getString(c.getColumnIndex("points"));
-
         }
         c.close();
         ;

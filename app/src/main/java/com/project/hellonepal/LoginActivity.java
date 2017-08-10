@@ -22,7 +22,7 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText username, password;
 
-    String url = "http://192.168.100.8:88/ourservice/service.php?task=login";
+    String url = "https://subhamdhakal23.000webhostapp.com/service.php?task=login";
     SharedPreferences preferences;
 
     AQuery aQuery;
@@ -41,7 +41,6 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 processLogin();
-
 
             }
         });
@@ -91,6 +90,5 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
 }
