@@ -11,6 +11,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -128,22 +129,24 @@ public class PlacePickerActivity extends Activity
 
                         // Notifies the user of their current location
                         if (MainActivity.selector == 1) {
-                            snapToPlace.setText("You're at " + fv.name + ". Here's some restaurants nearby.");
+                            snapToPlace.setText("You're near " + fv.name + ". Here's some restaurants nearby.");
+                            Log.d("HN", "msg: " + frs);
                         }
                         if (MainActivity.selector == 2) {
-                            snapToPlace.setText("You're at " + fv.name + ". Here's some cafe nearby.");
+                            snapToPlace.setText("You're near " + fv.name + ". Here's some cafe nearby.");
+                            Log.d("HN", "msg: " + frs);
                         }
                         if (MainActivity.selector == 3) {
-                            snapToPlace.setText("You're at " + fv.name + ". Here's some place to have a drink nearby.");
+                            snapToPlace.setText("You're near " + fv.name + ". Here's some place to have a drink nearby.");
                         }
                         if (MainActivity.selector == 4) {
-                            snapToPlace.setText("You're at " + fv.name + ". Here's some popular places to see nearby.");
+                            snapToPlace.setText("You're near " + fv.name + ". Here's some popular places to see nearby.");
                         }
                         if (MainActivity.selector == 5) {
-                            snapToPlace.setText("You're at " + fv.name + ". Here's some arts nearby.");
+                            snapToPlace.setText("You're near " + fv.name + ". Here's some arts nearby.");
                         }
                         if (MainActivity.selector == 6) {
-                            snapToPlace.setText("You're at " + fv.name + ". Here's some shops nearby.");
+                            snapToPlace.setText("You're near " + fv.name + ". Here's some shops nearby.");
                         }
                     }
 
@@ -185,7 +188,7 @@ public class PlacePickerActivity extends Activity
                             FoursquareResponse fr = fJson.response;
                             FoursquareGroup fg = fr.group;
                             List<FoursquareResults> frs = fg.results;
-
+                            Log.d("HN", "msg: " + frs);
                             // Displays the results in the RecyclerView
                             placePickerAdapter = new PlacePickerAdapter(getApplicationContext(), frs);
                             placePicker.setAdapter(placePickerAdapter);
@@ -215,6 +218,7 @@ public class PlacePickerActivity extends Activity
                             FoursquareResponse fr = fJson.response;
                             FoursquareGroup fg = fr.group;
                             List<FoursquareResults> frs = fg.results;
+                            Log.d("HN", "msg: " + frs);
 
                             // Displays the results in the RecyclerView
                             placePickerAdapter = new PlacePickerAdapter(getApplicationContext(), frs);
@@ -245,7 +249,7 @@ public class PlacePickerActivity extends Activity
                             FoursquareResponse fr = fJson.response;
                             FoursquareGroup fg = fr.group;
                             List<FoursquareResults> frs = fg.results;
-
+                            Log.d("HN", "msg: " + frs);
                             // Displays the results in the RecyclerView
                             placePickerAdapter = new PlacePickerAdapter(getApplicationContext(), frs);
                             placePicker.setAdapter(placePickerAdapter);
@@ -264,7 +268,7 @@ public class PlacePickerActivity extends Activity
                             foursquareClientSecret,
                             userLL,
                             userLLAcc);
-
+                    Log.d("HN", "msg: " + 4);
                     placesCall.enqueue(new Callback<FoursquareJSON>() {
 
                         @Override
@@ -275,7 +279,7 @@ public class PlacePickerActivity extends Activity
                             FoursquareResponse fr = fJson.response;
                             FoursquareGroup fg = fr.group;
                             List<FoursquareResults> frs = fg.results;
-
+                            Log.d("HN", "msg: " + frs);
                             // Displays the results in the RecyclerView
                             placePickerAdapter = new PlacePickerAdapter(getApplicationContext(), frs);
                             placePicker.setAdapter(placePickerAdapter);
@@ -305,7 +309,7 @@ public class PlacePickerActivity extends Activity
                             FoursquareResponse fr = fJson.response;
                             FoursquareGroup fg = fr.group;
                             List<FoursquareResults> frs = fg.results;
-
+                            Log.d("HN", "msg: " + frs);
                             // Displays the results in the RecyclerView
                             placePickerAdapter = new PlacePickerAdapter(getApplicationContext(), frs);
                             placePicker.setAdapter(placePickerAdapter);
@@ -336,7 +340,7 @@ public class PlacePickerActivity extends Activity
                             FoursquareResponse fr = fJson.response;
                             FoursquareGroup fg = fr.group;
                             List<FoursquareResults> frs = fg.results;
-
+                            Log.d("HN", "msg: " + frs);
                             // Displays the results in the RecyclerView
                             placePickerAdapter = new PlacePickerAdapter(getApplicationContext(), frs);
                             placePicker.setAdapter(placePickerAdapter);
