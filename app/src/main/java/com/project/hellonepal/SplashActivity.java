@@ -14,9 +14,9 @@ public class SplashActivity extends AppCompatActivity {
         findViewById(R.id.splash).postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(SplashActivity.this,LoginActivity.class));
+                startActivity(new Intent(SplashActivity.this, HomeActivity.class));
                 finish();
             }
-        },2000);
+        }, 2000);
     }
 }
